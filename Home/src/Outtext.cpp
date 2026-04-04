@@ -11,6 +11,6 @@ setcolor(YELLOW);
 outtextxy(100, 100, "This is computer graphics lab");
 
 getch();
-closegraph();
+closegraph();   
 return 0;
 }

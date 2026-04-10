@@ -29,7 +29,7 @@ int main()
 
     // 4. Display your name
     setcolor(CYAN);
-    outtextxy(100, 250, "Pasang Tashi Sherpa");
+    outtextxy(100, 250, "Pasang Tasi Sherpa");
 
     // Hold screen
     getch();

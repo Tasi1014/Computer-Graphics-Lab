@@ -1,40 +1,56 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
 #include <graphics.h>
 #include <math.h>
+
 int main()
 {
-    int gd = DETECT, gm;
-        // gd=graphics driver (detects best graphics driver and assigns it as default, gm=graphics mode)
-    int x1,y1,x2,y2,steps,k;
-    float xincr, yincr, x, y, dx, dy;
-    printf("Enter x1,y1: ");
-    scanf("%d %d", &x1, &y1);
-    printf("enter x2,y2: ");
-    scanf("%d %d", &x2, &y2);
+    //initialize the graphics mode
+    int gm, gd = DETECT, i;
+    int x1, y1, x2, y2, steps, k;
+    float x_incr, y_incr,  x, y, dx, dy;
+
     char data[] = "C:\\MinGW\\lib\\libbgi.a"; //static file
-    initgraph(&gd, &gm, data); // initializes the graph
+    initgraph(&gd, &gm, data);
+   
+    printf("Enter first end point");
+    scanf("%d %d", &x1, &y1);
+
+    printf("Enter second end point");
+    scanf("%d %d", &x2, &y2);
+
     dx = x2 - x1;
     dy = y2 - y1;
+
     if (abs(dx) > abs(dy))
         steps = abs(dx);
     else
         steps = abs(dy);
-    xincr = dx / steps;
-    yincr = dy / steps;
+
+    x_incr = dx/steps;
+    y_incr = dy/steps;
+    printf("%f %f", x_incr, y_incr);
+
     x = x1;
     y = y1;
-    printf(xincr);
-    for (k = 1; k <= steps; k++)
+
+    for (k=1; k<=steps; k++)
     {
-        delay(100); // for seeing the line drawing process slowly.
-        x += xincr;
-        y += yincr;
-        putpixel(int(x) , int(y), WHITE);
+        delay(100);
+        x += x_incr;
+        y += y_incr;
+        putpixel(x,y,WHITE);
     }
-    outtextxy(200, 20, "DDA"); // for printing text at desired screen location.
-    outtextxy(x1 + 5, y1 - 5, "(x1,y1)");
-    outtextxy(x2 + 5, y2 + 5, "(x2,y2)");
+
+    // outtextxy(200,20,"DDA"); //for printing text at desired screen location.
+    // outtextxy(x1+5,y1-5,"(x1,y1)");
+    // outtextxy(x2+5,y2+5,"(x2,y2)");
+    //draw
+
+    //getch and close
     getch();
-    closegraph(); // closes the graph and comes back to previous graphic mode.
+    closegraph();
+
     return 0;
 }

@@ -43,7 +43,8 @@ int main()
         putpixel(x,y,WHITE);
     }
 
-    // outtextxy(200,20,"DDA"); //for printing text at desired screen location.
+    outtextxy(200,20,"DDA"); //for printing text at desired screen location.
+    outtextxy(100,20,"Pasang Tasi Sherpa");
     // outtextxy(x1+5,y1-5,"(x1,y1)");
     // outtextxy(x2+5,y2+5,"(x2,y2)");
     //draw

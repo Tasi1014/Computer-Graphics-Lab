@@ -9,7 +9,7 @@ int main()
     int gd = DETECT, gm;
     int x1, y1, x2, y2, x, y, p, sx, sy;
 
-    printf("enter x1,y1: ");
+    printf("Enter x1,y1: ");
     scanf("%d%d", &x1, &y1);
 
     printf("enter x2,y2: ");
